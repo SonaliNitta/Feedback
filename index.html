@@ -1,63 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Website Feedback</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevOps Lifecycle Diagram</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      color: #4b0082;
+      margin-bottom: 0.5rem;
+    }
+    p.description {
+      max-width: 800px;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 1rem;
+      color: #333;
+    }
+    .diagram-container {
+      position: relative;
+      width: 800px;
+      height: 800px;
+    }
+    .stage {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background-color: #e6e6fa; /* light lavender */
+      color: #4b0082;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      font-weight: bold;
+      text-align: center;
+      padding: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+  </style>
 </head>
 <body>
-    <h1>Feedback</h1>
+  <h1>DevOps Lifecycle</h1>
+  <p class="description">
+    The DevOps lifecycle is a continuous process that integrates development and operations
+    for faster and more reliable software delivery. It consists of eight interconnected stages
+    that support collaboration, automation, and continuous improvement.
+  </p>
+  <div class="diagram-container">
+    <svg width="800" height="800">
+      <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+                refX="0" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7" fill="#4b0082" />
+        </marker>
+      </defs>
+      <line x1="400" y1="100" x2="600" y2="200" stroke="#4b0082" stroke-width="3" marker-end="url(#arrowhead)"/>
+      <line x1="600" y1="200" x2="650" y2="400" stroke="#4b0082" stroke-width="3" marker-end="url(#arrowhead)"/>
+      <line x1="650" y1="400" x2="600" y2="600" stroke="#4b0082" stroke-width="3" marker-end="url(#arrowhead)"/>
+      <line x1="600" y1="600" x2="400" y2="700" stroke="#4b0082" stroke-width="3" marker-end="url(#arrowhead)"/>
+      <line x1="400" y1="700" x2="200" y2="600" stroke="#4b0082" stroke-width="3" marker-end="url(#arrowhead)"/>
+      <line x1="200" y1="600" x2="150" y2="400" stroke="#4b0082" stroke-width="3" marker-end="url(#arrowhead)"/>
+      <line x1="150" y1="400" x2="200" y2="200" stroke="#4b0082" stroke-width="3" marker-end="url(#arrowhead)"/>
+      <line x1="200" y1="200" x2="400" y2="100" stroke="#4b0082" stroke-width="3" marker-end="url(#arrowhead)"/>
+    </svg>
 
-    <form action="#" method="post">
-        
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <br><br>
-
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <br><br>
-
-        
-        <label>How did you hear about the website?</label><br>
-        <input type="radio" id="google" name="website" value="google">
-        <label for="google">Google</label>
-        <input type="radio" id="social media" name="website" value="social media">
-        <label for="social media">Social media</label>
-        <input type="radio" id="friend" name="website" value="friend">
-        <label for="friend">Friend</label>
-        <input type="radio" id="others" name="website" value="others">
-        <label for="others">Others</label>
-        <br><br>
-
-        
-        <label>What did you like the most?</label><br>
-        <input type="checkbox" id="ui design" name="like" value="ui design">
-        <label for="ui design">UI Design</label><br>
-        <input type="checkbox" id="speed" name="like" value="speed">
-        <label for="speed">Speed</label><br>
-        <input type="checkbox" id="content" name="like" value="content">
-        <label for="content">Content</label><br>
-        <input type="checkbox" id="responsiveness" name="like" value="responsiveness">
-        <label for="responsiveness">Responsiveness</label><br><br>
-
-        
-        <label for="rate us">Rate us:</label>
-        <select id="rate us" name="rate" required>
-            <option value="">--Select--</option>
-            <option value="*">*</option>
-            <option value="**">**</option>
-            <option value="***">***</option>
-            <option value="****">****</option>
-            <option value="*****">*****</option>
-        </select>
-        <br><br>
-
-        <label for="comment">Your Comment</label><br>
-        <textarea id="comment" name="comment" rows="5" cols="30"></textarea>
-        <br><br>
-        
-        <input type="submit" value="Submit">
-    </form>
+    <div class="stage" style="top: 40px; left: 340px;">PLAN<br>define goals</div>
+    <div class="stage" style="top: 160px; left: 560px;">DEVELOP<br>write code</div>
+    <div class="stage" style="top: 360px; left: 620px;">BUILD<br>compile code</div>
+    <div class="stage" style="top: 560px; left: 540px;">TEST<br>ensure quality</div>
+    <div class="stage" style="top: 660px; left: 340px;">RELEASE<br>prepare for deploy</div>
+    <div class="stage" style="top: 560px; left: 140px;">DEPLOY<br>launch to users</div>
+    <div class="stage" style="top: 360px; left: 80px;">OPERATE<br>run applications</div>
+    <div class="stage" style="top: 160px; left: 140px;">MONITOR<br>track performance</div>
+  </div>
 </body>
 </html>
